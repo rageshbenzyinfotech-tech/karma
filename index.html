@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Karma Design Lab — Brand Strategy &amp; Digital Studio | Dubai &amp; India</title>
+  <meta name="description"
+    content="Karma Design Lab is a modern brand strategy and digital studio based in Dubai and Kochi. We craft elegant, SEO-friendly websites, high-performing e-commerce platforms, and distinctive brand identities.">
+  <link rel="preload" href="TWKLausanne-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="Manier-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="Manier-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script>try { if (localStorage.getItem('kdl-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) { }</script>
+</head>
+
+<body>
+
+  <!-- ── 6-PANEL PAGE TRANSITION ── -->
+  <div class="pt-overlay" aria-hidden="true">
+    <div class="pt-panel"></div>
+    <div class="pt-panel"></div>
+    <div class="pt-panel"></div>
+    <div class="pt-panel"></div>
+    <div class="pt-panel"></div>
+    <div class="pt-panel"></div>
+  </div>
+
+  <!-- ── PRELOADER ── -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__stage">
+      <div class="preloader__counter-cell">
+        <span class="preloader__pct">[<span id="preNum">0</span>%]</span>
+      </div>
+      <div class="preloader__logo-cell">
+        <div class="preloader__rise">
+          <span class="preloader__logo-svg" aria-hidden="true">KARMA</span>
+        </div>
+      </div>
+      <div class="preloader__name">
+        <div class="preloader__name-line">
+          <span class="preloader__char-mask"><span class="preloader__char-rise">K</span></span><span
+            class="preloader__char-mask"><span class="preloader__char-rise">A</span></span><span
+            class="preloader__char-mask"><span class="preloader__char-rise">R</span></span><span
+            class="preloader__char-mask"><span class="preloader__char-rise">M</span></span><span
+            class="preloader__char-mask"><span class="preloader__char-rise">A</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CURSOR ── -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__scaler">
+      <div class="cursor__disc">
+        <svg class="cursor__ring-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="19" stroke="#e26f29" stroke-width="1.2" />
+        </svg>
+      </div>
+      <span class="cursor__cross"></span>
+      <span class="cursor__label">View case</span>
+    </div>
+  </div>
+
+  <!-- ── BOTTOM NAVIGATION (Spreads wide on Hero, morphs to pill on scroll) ── -->
+  <nav class="scroll-nav" id="scrollNav">
+    <div class="scroll-nav__pill" aria-hidden="true"></div>
+    <div class="scroll-nav__icon-group" data-morph="true">
+      <button class="scroll-nav__theme-btn" id="themeBtn" aria-label="Switch theme" type="button">
+        <span class="scroll-nav__theme-icons" aria-hidden="true">
+          <img class="ico-sun" src="assets/icon-sun.svg" alt="Switch to light theme">
+          <img class="ico-moon" src="assets/icon-moon.svg" alt="Switch to dark theme">
+        </span>
+      </button>
+    </div>
+    <a class="scroll-nav__item scroll-nav__home-item" data-morph="true" href="#work">Work</a>
+    <a class="scroll-nav__item" data-morph="true" href="services.html">Services+</a>
+    <a class="scroll-nav__item" data-morph="true" href="#pricing">Pricing</a>
+    <a class="scroll-nav__item" data-morph="true" href="#about">About</a>
+    <a class="scroll-nav__item scroll-nav__talk" data-morph="true" href="#contact">
+      Let&apos;s talk
+      <img src="assets/icon-arrow-outward.svg" alt="" aria-hidden="true">
+    </a>
+  </nav>
+
+  <!-- ── MOBILE BAR ── -->
+  <div class="scroll-nav__m-bar" id="mBar">
+    <button class="scroll-nav__m-theme-btn" id="mThemeBtn" aria-label="Toggle theme" type="button">
+      <span class="scroll-nav__theme-icons" aria-hidden="true">
+        <img class="ico-sun" src="assets/icon-sun.svg" alt="Theme">
+        <img class="ico-moon" src="assets/icon-moon.svg" alt="Theme">
+      </span>
+    </button>
+    <button class="scroll-nav__m-bar-main" id="mBarBtn" aria-expanded="false" aria-label="Home, open menu"
+      type="button">
+      <span class="scroll-nav__m-label" id="mLabel">Home</span>
+      <span class="scroll-nav__m-burger" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+
+  <!-- ── MOBILE OVERLAY ── -->
+  <div class="scroll-nav__m-overlay" id="mOverlay" aria-hidden="true">
+    <div class="scroll-nav__m-panel">
+      <div class="scroll-nav__m-logo">
+        <img src="assets/karma-logo.png" alt="Karma Design Lab">
+      </div>
+      <div class="scroll-nav__m-menu">
+        <a class="scroll-nav__m-item scroll-nav__m-item--active" href="#home">Home</a>
+        <a class="scroll-nav__m-item" href="#work">Work</a>
+        <a class="scroll-nav__m-item" href="services.html">Services+</a>
+        <a class="scroll-nav__m-item" href="#pricing">Pricing</a>
+        <a class="scroll-nav__m-item" href="#about">About</a>
+        <a class="scroll-nav__m-item scroll-nav__m-talk" href="#contact">Let&apos;s talk <img
+            src="assets/icon-arrow-outward.svg" alt="" style="width:14px;height:14px;display:inline-block"></a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════ -->
+    <section class="hero" id="home">
+      <h1 class="sr-only">From Wireframes to Wow’s — elevating UX to the remarkable</h1>
+
+      <!-- Architectural fluted glass & bronze hero background banner (hreobg.avif) -->
+      <div class="hero__bg-wrap" aria-hidden="true">
+        <picture>
+          <source srcset="assets/hreobg.avif" type="image/avif">
+          <img class="hero__bg-img" src="assets/hreobg.avif" alt="Architectural fluted glass & bronze interior" fetchpriority="high">
+        </picture>
+        <div class="hero__bg-vignette"></div>
+      </div>
+
+      <!-- Top ambient light glow -->
+      <div class="hero__top-light" aria-hidden="true"></div>
+
+      <canvas class="hero__shader" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero__bottom-fade" aria-hidden="true"></div>
+      <div class="hero__bottom-highlight" aria-hidden="true"></div>
+
+      <!-- Center logo mark (Origami ribbon badge) -->
+      <a href="#home" aria-label="Home" class="hero__logo-link">
+        <span class="hero__logo" role="img" aria-label="Karma Logo">
+          <img src="assets/logo.png" alt="Karma Design Lab Logo" aria-hidden="true">
+        </span>
+      </a>
+
+      <!-- Floating text lines — exact typography & layout -->
+      <div class="hero__banner" aria-hidden="true">
+        <p class="hero__line-sans" data-split style="--l:26.30%;--t:18.5625rem">From Wireframes</p>
+        <p class="hero__line-display" data-split style="--l:53.07%;--t:24.1875rem">to Wow’s</p>
+        <p class="hero__line-sans" data-split style="--l:25.83%;--t:29.8125rem">elevating UX to the</p>
+        <p class="hero__line-display" data-scramble style="--l:46.61%;--t:35.4375rem">remarkable</p>
+      </div>
+
+      <!-- CTA pill button -->
+      <a class="hero__cta" data-cta href="#contact">
+        <span class="hero__cta-inner">Book a call</span>
+      </a>
+
+      <!-- Taglines -->
+      <p class="hero__tagline hero__tagline--left" data-subsplit>Brand strategy &amp; digital studio based in Dubai &amp; India</p>
+      <p class="hero__tagline hero__tagline--right" data-subsplit>Crafting digital products that simply work — without agency overhead</p>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+     ABOUT — word by word lighting
+══════════════════════════════════════════════════════ -->
+    <section class="about" id="about">
+      <div class="about__inner">
+        <div class="about__text-block">
+          <p class="about__flow" id="aboutFlow">
+            <span class="about__w" data-w>Karma</span> <span class="about__w" data-w>Design</span> <span class="about__w" data-w>Lab</span>
+            <span class="about__w" data-w>is</span> <span class="about__w" data-w>a</span> <span class="about__w" data-w>modern</span>
+            <span class="about__w" data-w><u>brand</u></span> <span class="about__w" data-w><u>strategy</u></span> <span class="about__w" data-w>and</span>
+            <span class="about__w" data-w>digital</span> <span class="about__w" data-w>studio</span> <span class="about__w" data-w>based</span>
+            <span class="about__w" data-w>in</span> <span class="about__w" data-w>Dubai</span> <span class="about__w" data-w>and</span>
+            <span class="about__w" data-w>Kochi.</span> <span class="about__w" data-w>We</span> <span class="about__w" data-w>work</span>
+            <span class="about__w" data-w>with</span> <span class="about__w" data-w>partners</span> <span class="about__w" data-w>who</span>
+            <span class="about__w" data-w>are</span> <span class="about__w" data-w>as</span> <span class="about__w" data-w>dedicated</span>
+            <span class="about__w" data-w>to</span> <span class="about__w" data-w>their</span> <span class="about__w" data-w>craft</span>
+            <span class="about__w" data-w>as</span> <span class="about__w" data-w>we</span> <span class="about__w" data-w>are</span>
+            <span class="about__w" data-w>to</span> <span class="about__w" data-w>ours.</span> <span class="about__w" data-w>Built</span>
+            <span class="about__w" data-w>on</span> <span class="about__w" data-w>honesty,</span> <span class="about__w" data-w>hard</span>
+            <span class="about__w" data-w>work,</span> <span class="about__w" data-w>and</span> <span class="about__w" data-w>trust,</span>
+            <span class="about__w" data-w>we</span> <span class="about__w" data-w>craft</span> <span class="about__w" data-w>bespoke</span>
+            <span class="about__w" data-w><u>e-commerce</u></span> <span class="about__w" data-w><u>platforms</u></span> <span class="about__w" data-w>and</span>
+            <span class="about__w" data-w>responsive</span> <span class="about__w" data-w><u>websites</u></span> <span class="about__w" data-w>engineered</span>
+            <span class="about__w" data-w>to</span> <span class="about__w" data-w>deliver</span> <span class="about__w" data-w>exceptional</span>
+            <span class="about__w" data-w>user</span> <span class="about__w" data-w>experiences,</span> <span class="about__w" data-w>organic</span>
+            <span class="about__w" data-w>search</span> <span class="about__w" data-w>visibility,</span> <span class="about__w" data-w>and</span>
+            <span class="about__w" data-w>measurable</span> <span class="about__w" data-w>business</span> <span class="about__w" data-w>growth.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+     PLAY REAL — video reel with marquee title
+══════════════════════════════════════════════════════ -->
+    <section class="real">
+      <div class="real__stage" id="realStage">
+        <video class="real__video" id="realVideo" poster="assets/real-billboard.jpg" preload="metadata" playsinline loop
+          muted>
+          <source src="https://pub-c7582c931cdf4f86acceec21c154f4ce.r2.dev/real-reel.webm.webm" type="video/webm">
+        </video>
+        <div class="real__overlay"></div>
+        <div class="real__header">
+          <div class="real__marquee" aria-hidden="true">
+            <div class="real__track">
+              <div class="real__group">
+                <span class="real__title-sans">Play Real</span>
+                <span class="real__title-display">Play Real</span>
+                <span class="real__title-sans">Play Real</span>
+                <span class="real__title-display">Play Real</span>
+              </div>
+              <div class="real__group" aria-hidden="true">
+                <span class="real__title-sans">Play Real</span>
+                <span class="real__title-display">Play Real</span>
+                <span class="real__title-sans">Play Real</span>
+                <span class="real__title-display">Play Real</span>
+              </div>
+            </div>
+          </div>
+          <button class="real__play-btn" aria-label="Play showreel" id="realPlayBtn" type="button">
+            <svg width="18" height="20" viewBox="0 0 18 20" fill="currentColor">
+              <path d="M0 0L18 10L0 20V0Z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+     METRICS
+══════════════════════════════════════════════════════ -->
+    <section class="metrics" id="metrics">
+      <div class="metrics__grid">
+        <div class="metrics__card">
+          <div class="metrics__value-wrap">
+            <p class="metrics__value"><span class="metrics__slide" data-count="10">10+</span></p>
+            <p class="metrics__value-label"><span class="metrics__slide">Years</span></p>
+          </div>
+          <p class="metrics__desc">Crafting digital<br>experiences in Dubai &amp; India</p>
+        </div>
+        <div class="metrics__card">
+          <div class="metrics__value-wrap">
+            <p class="metrics__value"><span class="metrics__slide" data-count="100">100+</span></p>
+            <p class="metrics__value-label"><span class="metrics__slide">Projects</span></p>
+          </div>
+          <p class="metrics__desc">E-commerce platforms<br>&amp; bespoke websites built</p>
+        </div>
+        <div class="metrics__card">
+          <div class="metrics__value-wrap">
+            <p class="metrics__value"><span class="metrics__slide">98%</span></p>
+            <p class="metrics__value-label"><span class="metrics__slide">Trust</span></p>
+          </div>
+          <p class="metrics__desc">Long-term client<br>satisfaction &amp; retention</p>
+        </div>
+        <div class="metrics__card">
+          <div class="metrics__value-wrap">
+            <p class="metrics__value"><span class="metrics__slide">24/7</span></p>
+            <p class="metrics__value-label"><span class="metrics__slide">Support</span></p>
+          </div>
+          <p class="metrics__desc">High-performance hosting<br>&amp; active maintenance</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+     SERVICES — roll-text hover (exact kstoimenov structure)
+══════════════════════════════════════════════════════ -->
+    <section class="services" id="services">
+      <div class="services__grid">
+        <div class="services__header">
+          <h2 class="services__header-title"><em>Services</em>+ for better digital products</h2>
+          <p class="services__header-desc">Full-cycle brand strategy, responsive web design, e-commerce platforms, and digital development. We take products from rough idea to scalable platforms that people actually use — without the agency overhead.</p>
+          <a class="services__header-btn" href="services.html">View services</a>
+        </div>
+        <div class="services__list">
+
+          <a class="services__row" href="services.html#web-development">
+            <span class="services__row-icon"
+              style="mask-image:url(assets/svc-product-design.svg);-webkit-mask-image:url(assets/svc-product-design.svg)"
+              aria-hidden="true"></span>
+            <p class="services__row-title">
+              <span class="services__roll-inner">Web development<span class="services__roll-dup"
+                  aria-hidden="true">Web development</span></span>
+            </p>
+            <div class="services__indicator"><span>Web</span><span>Dev</span></div>
+          </a>
+
+          <a class="services__row" href="services.html#web-design">
+            <span class="services__row-icon"
+              style="mask-image:url(assets/svc-web-design.svg);-webkit-mask-image:url(assets/svc-web-design.svg)"
+              aria-hidden="true"></span>
+            <p class="services__row-title">
+              <span class="services__roll-inner">Web design &amp; UI/UX<span class="services__roll-dup" aria-hidden="true">Web
+                  design &amp; UI/UX</span></span>
+            </p>
+            <div class="services__indicator"><span>Web</span><span>Design</span></div>
+          </a>
+
+          <a class="services__row" href="services.html#ecommerce">
+            <span class="services__row-icon"
+              style="mask-image:url(assets/svc-digital-strategy.png);-webkit-mask-image:url(assets/svc-digital-strategy.png)"
+              aria-hidden="true"></span>
+            <p class="services__row-title">
+              <span class="services__roll-inner">E-commerce platforms<span class="services__roll-dup"
+                  aria-hidden="true">E-commerce platforms</span></span>
+            </p>
+            <div class="services__indicator"><span>Online</span><span>Store</span></div>
+          </a>
+
+          <a class="services__row" href="services.html#brand-identity">
+            <span class="services__row-icon"
+              style="mask-image:url(assets/svc-brand-identity.svg);-webkit-mask-image:url(assets/svc-brand-identity.svg)"
+              aria-hidden="true"></span>
+            <p class="services__row-title">
+              <span class="services__roll-inner">Brand identity<span class="services__roll-dup" aria-hidden="true">Brand
+                  identity</span></span>
+            </p>
+            <div class="services__indicator"><span>Brand</span><span>System</span></div>
+          </a>
+
+          <a class="services__row" href="services.html#mobile-applications">
+            <span class="services__row-icon"
+              style="mask-image:url(assets/services/glyph-mobile.svg);-webkit-mask-image:url(assets/services/glyph-mobile.svg)"
+              aria-hidden="true"></span>
+            <p class="services__row-title">
+              <span class="services__roll-inner">Mobile applications<span class="services__roll-dup"
+                  aria-hidden="true">Mobile applications</span></span>
+            </p>
+            <div class="services__indicator"><span>iOS &amp;</span><span>Android</span></div>
+          </a>
+
+        </div>
+
+        <!-- ── WHO WE BUILD FOR ── -->
+        <div class="services__clients">
+          <p class="services__clients-header">Who we build for</p>
+          <p class="services__clients-desc">From ambitious brands in the UAE and India to international digital enterprises, we build bespoke web experiences that drive real business growth.</p>
+          <p class="services__clients-sub">Over a decade of dedicated craftsmanship, honesty, and technical excellence.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+     WORKS — exact Polygon & Macmillan project cards
+══════════════════════════════════════════════════════ -->
+    <section class="works" id="work">
+      <div class="works__grid">
+
+        <!-- Project 1: Polygon -->
+        <div class="works__project">
+          <div class="works__project-top">
+            <div class="works__project-info">
+              <span class="works__tag">Finance</span>
+              <h2 class="works__title">Polygon</h2>
+            </div>
+            <a class="works__view-link" href="#polygon">View project</a>
+          </div>
+          <div class="works__row-media">
+            <a class="works__media-card works__media-card--main" href="#polygon" data-cursor-case
+              aria-label="Polygon — view case study">
+              <div class="works__media-inner" style="background:#0e131f">
+                <img src="assets/polygon-main.webp" alt="Polygon Forex API platform on laptop" loading="lazy">
+              </div>
+            </a>
+            <a class="works__media-card works__media-card--side" href="#polygon" aria-hidden="true" tabindex="-1">
+              <div class="works__media-inner" style="background:#1a1a1a">
+                <img src="assets/polygon-side.webp" alt="Nasdaq X Polygon tower billboard" loading="lazy">
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Divider Line -->
+        <div class="works__divider" aria-hidden="true"></div>
+
+        <!-- Project 2: Macmillan cancer support -->
+        <div class="works__project">
+          <div class="works__project-top">
+            <div class="works__project-info">
+              <span class="works__tag">Healthcare</span>
+              <h2 class="works__title">Macmillan cancer support</h2>
+            </div>
+            <a class="works__view-link" href="#macmillan">View project</a>
+          </div>
+          <div class="works__row-media">
+            <a class="works__media-card works__media-card--main" href="#macmillan" data-cursor-case
+              aria-label="Macmillan cancer support — view case study">
+              <div class="works__media-inner" style="background:#0a4a1b">
+                <img src="assets/macmillan-main.webp" alt="Macmillan cancer information and support website"
+                  loading="lazy">
+              </div>
+            </a>
+            <a class="works__media-card works__media-card--side" href="#macmillan" aria-hidden="true" tabindex="-1">
+              <div class="works__media-inner" style="background:#1b3d22">
+                <img src="assets/macmillan-side.webp" alt="We Are Macmillan Cancer Support apparel" loading="lazy">
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+     WORKS CTA — "Want to see how I enable companies?"
+══════════════════════════════════════════════════════ -->
+    <section class="works-cta" id="cta">
+      <div class="works-cta__line-mask">
+        <div class="works-cta__line-inner">
+          <span class="works-cta__sans">Want to see</span>
+          <img class="works-cta__eye" id="ctaEye" src="assets/cta-eye.svg" alt="" aria-hidden="true" />
+        </div>
+      </div>
+      <div class="works-cta__line-mask">
+        <div class="works-cta__line-inner" style="transition-delay:0.12s">
+          <span class="works-cta__serif">how I</span>
+          <button class="works-cta__toggle" id="ctaToggle" type="button" aria-label="Toggle enable companies">
+            <span class="works-cta__plus" aria-hidden="true">+</span>
+            <span class="works-cta__knob" id="ctaKnob">
+              <img src="assets/cta-portrait.png" alt="Founder Portrait" loading="lazy" />
+            </span>
+          </button>
+          <span class="works-cta__serif">enable</span>
+        </div>
+      </div>
+      <div class="works-cta__line-mask">
+        <div class="works-cta__line-inner" style="transition-delay:0.24s">
+          <span class="works-cta__sans">companies?</span>
+        </div>
+      </div>
+      <div class="works-cta__desc-mask">
+        <p class="works-cta__desc">A few projects I’m proud of, built with industry-leading corporations and independent
+          partners alike.</p>
+      </div>
+      <div class="works-cta__button-group">
+        <a class="works-cta__view-works" href="#work">View all works</a>
+        <a class="works-cta__arrow-btn" href="#work" aria-label="View all works">
+          <img src="assets/cta-arrow.svg" alt="" aria-hidden="true" />
+        </a>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+     TESTIMONIALS (Stacked Deck)
+══════════════════════════════════════════════════════ -->
+    <section class="testimonials" id="testimonials">
+      <div class="testimonials__inner">
+        <div class="testimonials__left">
+          <p class="testimonials__heading">What <em>people</em><br>have to say</p>
+          <p class="testimonials__leftDesc">Curious what it’s really like to work with me?<br>Don’t take my word for it.
+            Here’s what my clients say.</p>
+        </div>
+        <div class="testimonials__deck" id="testimonialsDeck">
+          <div data-tcard="true" class="testimonials__card">
+            <p class="testimonials__quote">He treated a cancer-support product with the care it deserved: clearer
+              journeys, less friction, and a system our whole team could finally build on.</p>
+            <p class="testimonials__author"><strong>Richard Dood </strong>- <span
+                class="testimonials__authorRole">Digital Director @Macmillan</span></p>
+          </div>
+          <div data-tcard="true" class="testimonials__card">
+            <p class="testimonials__quote">He turned a developer-first product into something anyone could navigate.
+              Sharp, fast, and grounded in how our users actually work.</p>
+            <p class="testimonials__author"><strong>Peter Stacho </strong>- <span class="testimonials__authorRole">COO
+                @Polygon.io</span></p>
+          </div>
+          <div data-tcard="true" class="testimonials__card">
+            <p class="testimonials__quote">Krasi moves at the pace of the idea, not the org chart. He prototyped,
+              tested, and refined faster than our roadmap could keep up.</p>
+            <p class="testimonials__author"><strong>Amori Langstaff </strong>- <span
+                class="testimonials__authorRole">Product Innovation @WP Engine</span></p>
+          </div>
+          <div data-tcard="true" class="testimonials__card">
+            <p class="testimonials__quote">We handed Krasi a rough idea and got back a fundable product. Fast,
+              opinionated, and genuinely invested in whether we won.</p>
+            <p class="testimonials__author"><strong>Carlos Strazzer </strong>- <span
+                class="testimonials__authorRole">CEO @Ventures Lab</span></p>
+          </div>
+          <div data-tcard="true" class="testimonials__card">
+            <p class="testimonials__quote">Nothing is beyond possibility when working with Krasi. He’s able to rise to
+              any challenge by bringing a deep curiosity, investment and expertise to every project. Not only is he
+              reliable but he’s great to work with. He’s genuinely dedicated to his craft.</p>
+            <p class="testimonials__author"><strong>Gaidar Magdanurov </strong>- <span
+                class="testimonials__authorRole">COO @Acronis</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+     QUOTE (Parallax Drift)
+══════════════════════════════════════════════════════ -->
+    <section class="quote" id="quote">
+      <div class="quote__content" id="quoteContent">
+        <p data-drift="200" data-mdrift="200" class="quote__line" style="left:9.25rem;top:0rem">Design to scale</p>
+        <p data-drift="-240" data-mdrift="-240" class="quote__line quote__lineSerif"
+          style="left:16.625rem;top:13.5938rem">drive experiences</p>
+        <p data-drift="170" data-mdrift="170" class="quote__line" style="left:25.5rem;top:27.1875rem">with data</p>
+        <p data-drift="-240" data-mdrift="-240" class="quote__amp" style="left:11.625rem;top:22.5rem">&amp;</p>
+
+        <img data-qglyph="0" data-drift="200" data-mdrift="-240" class="quote__icon"
+          style="left:116.4375rem;top:2.875rem" src="assets/quote-star.svg" alt="" />
+        <img data-qglyph="1" data-drift="-240" data-mdrift="200" class="quote__icon"
+          style="left:0rem;top:18.8125rem;height:5.1875rem" src="assets/quote-half.svg" alt="" />
+        <img data-qglyph="2" data-drift="200" data-mdrift="200" class="quote__icon"
+          style="left:104.8125rem;top:2.9375rem;height:9.5625rem" src="assets/quote-icon-1.png" alt="" />
+        <img data-qglyph="3" data-drift="170" data-mdrift="170" class="quote__icon"
+          style="left:83.1875rem;top:30.0625rem" src="assets/quote-icon-2.png" alt="" />
+        <img data-qglyph="4" data-drift="170" data-mdrift="170" class="quote__icon"
+          style="left:94.8125rem;top:30.0625rem" src="assets/quote-icon-3.png" alt="" />
+        <img data-qglyph="5" data-drift="170" data-mdrift="170" class="quote__icon"
+          style="left:106.4375rem;top:30.0625rem" src="assets/quote-icon-4.png" alt="" />
+        <img data-qglyph="6" data-drift="170" data-mdrift="170" class="quote__icon"
+          style="left:118.0625rem;top:30.0625rem" src="assets/quote-icon-5.png" alt="" />
+        <img data-qglyph="7" data-drift="170" data-mdrift="170" class="quote__icon"
+          style="left:13.875rem;top:30.0625rem" src="assets/quote-icon-6.png" alt="" />
+        <img data-qglyph="8" data-drift="170" data-mdrift="200" class="quote__icon" style="left:2.25rem;top:30.0625rem"
+          src="assets/quote-hourglass.svg" alt="" />
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+     PARTNERS GRID
+══════════════════════════════════════════════════════ -->
+    <section class="partners" id="partners">
+      <div class="partners__inner">
+        <p class="partners__title">Valuable<br><em>Partners</em></p>
+        <p class="partners__desc">Trusted by teams from pre-seed start-ups to the Fortune 500.</p>
+        <div class="partners__grid">
+          <div class="partners__cell partners__bt partners__bb partners__br"><img class="partners__logo"
+              src="assets/partners/acronis.svg" alt="Acronis" style="width:6.0802rem;height:1.2974rem" /></div>
+          <div class="partners__cell partners__bt partners__bb partners__br"><img class="partners__logo"
+              src="assets/partners/constructor.svg" alt="Constructor" style="width:9.756rem;height:0.8795rem" /></div>
+          <div class="partners__cell partners__bt partners__bb partners__br"><img class="partners__logo"
+              src="assets/partners/ringier.svg" alt="Ringier" style="width:8.5691rem;height:1.6423rem" /></div>
+          <div class="partners__cell partners__bt partners__bb partners__br"><img class="partners__logo"
+              src="assets/partners/macmillan.svg" alt="Macmillan Cancer Support"
+              style="width:9.2425rem;height:1.9789rem" /></div>
+          <div class="partners__cell partners__bt partners__bb"><img class="partners__logo"
+              src="assets/partners/endava.svg" alt="Endava" style="width:8.7581rem;height:2.9317rem" /></div>
+          <div class="partners__cell partners__bb partners__br"><img class="partners__logo"
+              src="assets/partners/simplebet.svg" alt="Simplebet" style="width:9.5359rem;height:2.0226rem" /></div>
+          <div class="partners__cell partners__bb partners__br"><img class="partners__logo"
+              src="assets/partners/jeton.svg" alt="Jeton" style="width:7.0419rem;height:2.0521rem" /></div>
+          <div class="partners__cell partners__bb partners__br"><img class="partners__logo"
+              src="assets/partners/lottoland.svg" alt="Lottoland" style="width:7.7719rem;height:2.4259rem" /></div>
+          <div class="partners__cell partners__bb partners__br"><img class="partners__logo"
+              src="assets/partners/dojo.svg" alt="Dojo" style="width:5.9808rem;height:2.6239rem" /></div>
+          <div class="partners__cell partners__bb"><img class="partners__logo" src="assets/partners/telus.svg"
+              alt="TELUS" style="width:9.8293rem;height:1.825rem" /></div>
+          <div class="partners__cell partners__bb partners__br"><img class="partners__logo"
+              src="assets/partners/claimcompass.svg" alt="Claim Compass" style="width:9.6463rem;height:3.2989rem" />
+          </div>
+          <div class="partners__cell partners__bb partners__br"><img class="partners__logo"
+              src="assets/partners/brandquadergy.svg" alt="Brand Quadergy" style="width:9.2691rem;height:2.5109rem" />
+          </div>
+          <div class="partners__cell partners__bb partners__br"><img class="partners__logo"
+              src="assets/partners/polygon.svg" alt="polygon.io" style="width:8.9937rem;height:1.759rem" /></div>
+          <div class="partners__cell partners__bb partners__br"><img class="partners__logo"
+              src="assets/partners/efes.svg" alt="Efes Club" style="width:2.7496rem;height:5.5217rem" /></div>
+          <div class="partners__cell partners__bb"><img class="partners__logo" src="assets/partners/jobpal.svg"
+              alt="jobpal" style="width:6.7484rem;height:2.419rem" /></div>
+          <div class="partners__cell partners__br"><img class="partners__logo" src="assets/partners/blogo.svg"
+              alt="Partner" style="width:3.5654rem;height:4.2776rem" /></div>
+          <div class="partners__cell partners__br"><img class="partners__logo" src="assets/partners/unilever.svg"
+              alt="Unilever" style="width:4.1078rem;height:4.544rem" /></div>
+          <div class="partners__cell"><a class="partners__companyBtn" href="#contact">Your company<img
+                src="assets/company-star.svg" alt="" /></a></div>
+          <div class="partners__cell"></div>
+          <div class="partners__cell"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════ -->
+  <footer class="footer" id="contact">
+    <div class="footer__inner">
+      <div class="footer__headingMask">
+        <h2 class="footer__heading">Get in touch</h2>
+      </div>
+      <div class="footer__actionRow">
+        <p class="footer__mission">
+          We build digital products that move people and move business. Based in Dubai (UAE) &amp; Kochi (India).
+          <button type="button" class="footer__writeLink" id="footerWriteBtn">Prefer to write? Send a note.</button>
+        </p>
+        <button type="button" class="footer__contact" id="footerContactBtn" aria-label="Contact — send a note">
+          <span>Contact</span>
+          <img src="assets/footer-contact-arrow.svg" alt="" />
+        </button>
+      </div>
+      <div class="footer__socialRow">
+        <a class="footer__card" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn">
+          <span class="footer__cardIcon"
+            style="mask-image:url(assets/social-linkedin.svg);-webkit-mask-image:url(assets/social-linkedin.svg)"
+            aria-hidden="true"></span>
+          <span class="footer__cardLabel">LinkedIn</span>
+        </a>
+        <a class="footer__card" href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <span class="footer__cardIcon"
+            style="mask-image:url(assets/social-x.svg);-webkit-mask-image:url(assets/social-x.svg)"
+            aria-hidden="true"></span>
+          <span class="footer__cardLabel">X</span>
+        </a>
+        <a class="footer__card" href="https://www.behance.net" target="_blank" rel="noopener noreferrer"
+          aria-label="Behance">
+          <span class="footer__cardIcon"
+            style="mask-image:url(assets/social-behance.svg);-webkit-mask-image:url(assets/social-behance.svg)"
+            aria-hidden="true"></span>
+          <span class="footer__cardLabel">Behance</span>
+        </a>
+        <a class="footer__card" href="https://dribbble.com" target="_blank" rel="noopener noreferrer"
+          aria-label="Dribbble">
+          <span class="footer__cardIcon"
+            style="mask-image:url(assets/social-dribbble.svg);-webkit-mask-image:url(assets/social-dribbble.svg)"
+            aria-hidden="true"></span>
+          <span class="footer__cardLabel">Dribbble</span>
+        </a>
+        <a class="footer__card" href="https://www.awwwards.com" target="_blank" rel="noopener noreferrer"
+          aria-label="Awwwards">
+          <span class="footer__cardIcon"
+            style="mask-image:url(assets/social-awwwards.svg);-webkit-mask-image:url(assets/social-awwwards.svg)"
+            aria-hidden="true"></span>
+          <span class="footer__cardLabel">Awwwards</span>
+        </a>
+      </div>
+      <p class="footer__copyright">©2026 Karma Design Lab — All rights reserved</p>
+      <div class="footer__legal">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+      </div>
+      <button class="footer__logoBtn" id="footerBackToTop" aria-label="Back to top" type="button">
+        <img class="footer__logoImg" src="assets/logo-registered.svg" alt="Karma logo" />
+        <img class="footer__arrowImg" src="assets/footer-arrow-up.svg" alt="" />
+      </button>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════
+     CONTACT MODAL (Exact kstoimenov.com)
+══════════════════════════════════════════════════════ -->
+  <div class="contact-modal__overlay" id="contactModalOverlay" role="presentation" aria-hidden="true">
+    <div class="contact-modal__modal" role="dialog" aria-modal="true" aria-labelledby="contact-title" id="contactModal">
+      <span class="contact-modal__grabber" aria-hidden="true"></span>
+      <button type="button" class="contact-modal__close" id="contactModalClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <!-- Sent state -->
+      <div class="contact-modal__sent" id="contactModalSent" style="display:none">
+        <div class="contact-modal__sentGlyphs" aria-hidden="true">
+          <span class="contact-modal__sentGlyph"
+            style="mask-image:url(assets/pricing/glyph-project.svg);-webkit-mask-image:url(assets/pricing/glyph-project.svg)"></span>
+          <span class="contact-modal__sentGlyph"
+            style="mask-image:url(assets/pricing/glyph-subscription.svg);-webkit-mask-image:url(assets/pricing/glyph-subscription.svg)"></span>
+          <span class="contact-modal__sentGlyph"
+            style="mask-image:url(assets/pricing/glyph-partnership.svg);-webkit-mask-image:url(assets/pricing/glyph-partnership.svg)"></span>
+        </div>
+        <h2 id="contact-sent-title" class="contact-modal__sentTitle">Got it. Thank you.</h2>
+        <div class="contact-modal__sentBody">
+          <p>Your note just landed in my inbox, and I read every one myself. Expect a reply within a day or two.</p>
+          <p>In the meantime, keep building. If more comes to mind, this form is always open.</p>
+        </div>
+        <button type="button" class="contact-modal__closeBtn" id="contactModalSentClose">Close</button>
+      </div>
+
+      <!-- Form state -->
+      <div class="contact-modal__form-wrap" id="contactModalFormWrap">
+        <div class="contact-modal__header">
+          <h2 id="contact-title" class="contact-modal__title">Let&apos;s build something <em>remarkable</em></h2>
+          <p class="contact-modal__subtitle">Tell us about your project, timeline, and goals. We read every note ourselves and reply within one business day.</p>
+        </div>
+
+        <form class="contact-modal__form" id="contactModalForm" novalidate>
+          <div class="contact-modal__row">
+            <div class="contact-modal__field" id="field-name">
+              <input class="contact-modal__control" id="cf-name" type="text" placeholder=" " required />
+              <label for="cf-name">Your name<span class="contact-modal__req">*</span></label>
+              <p class="contact-modal__errorMsg" id="err-name" style="display:none">Please complete this required field.
+              </p>
+            </div>
+            <div class="contact-modal__field" id="field-email">
+              <input class="contact-modal__control" id="cf-email" type="email" placeholder=" " required />
+              <label for="cf-email">Email<span class="contact-modal__req">*</span></label>
+              <p class="contact-modal__errorMsg" id="err-email" style="display:none">Please enter a valid email address.
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-modal__row">
+            <div class="contact-modal__field" id="field-linkedin">
+              <input class="contact-modal__control" id="cf-linkedin" type="text" placeholder=" " />
+              <label for="cf-linkedin">LinkedIn</label>
+            </div>
+            <div class="contact-modal__field" id="field-company">
+              <input class="contact-modal__control" id="cf-company" type="text" placeholder=" " />
+              <label for="cf-company">Company name</label>
+            </div>
+          </div>
+
+          <div class="contact-modal__chipsField" id="field-chips">
+            <p class="contact-modal__chipsLabel">You are looking for?<span class="contact-modal__req">*</span></p>
+            <div class="contact-modal__chips" id="contactChips" role="group" aria-label="You are looking for?">
+              <button type="button" class="contact-modal__chip" aria-pressed="false">Product design</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">UX audit</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">Digital strategy</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">Web design</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">Brand identity</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">Service design</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">Marketing design</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">Webflow development</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">Other</button>
+            </div>
+            <p class="contact-modal__errorMsg" id="err-chips" style="display:none">Please pick at least one.</p>
+          </div>
+
+          <div class="contact-modal__field" id="field-message">
+            <textarea class="contact-modal__control" id="cf-message" placeholder=" " rows="1" required></textarea>
+            <label for="cf-message">Tell me more about the project<span class="contact-modal__req">*</span></label>
+            <p class="contact-modal__errorMsg" id="err-message" style="display:none">Please complete this required
+              field.</p>
+          </div>
+
+          <div class="contact-modal__sendRow">
+            <p class="contact-modal__formError" id="cf-general-error" style="display:none"></p>
+            <button type="submit" class="contact-modal__send" id="cf-submit">
+              <span class="contact-modal__sendLabel">Send note</span>
+              <span class="contact-modal__sendDisc" aria-hidden="true">
+                <img src="assets/footer-contact-arrow.svg" alt="" />
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

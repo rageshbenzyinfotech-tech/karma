@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Services — Karma Design Lab | Brand Strategy &amp; Digital Studio</title>
+  <meta name="description"
+    content="Six core disciplines, one dedicated studio partner. Web development, UI/UX design, e-commerce platforms, mobile applications, brand identity, and SEO. Based in Dubai and Kochi.">
+  <link rel="preload" href="TWKLausanne-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="Manier-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="Manier-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="services.css">
+  <script>try { if (localStorage.getItem('kdl-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) { }</script>
+</head>
+
+<body>
+
+  <!-- ── 6-PANEL PAGE TRANSITION ── -->
+  <div class="pt-overlay" aria-hidden="true">
+    <div class="pt-panel"></div>
+    <div class="pt-panel"></div>
+    <div class="pt-panel"></div>
+    <div class="pt-panel"></div>
+    <div class="pt-panel"></div>
+    <div class="pt-panel"></div>
+  </div>
+
+  <!-- ── CURSOR ── -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__scaler">
+      <div class="cursor__disc">
+        <svg class="cursor__ring-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="19" stroke="#e26f29" stroke-width="1.2" />
+        </svg>
+      </div>
+      <span class="cursor__cross"></span>
+      <span class="cursor__label">View</span>
+    </div>
+  </div>
+
+  <!-- ── SVG FILTER FOR GLASS MORPHISM ── -->
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute">
+    <filter id="liquid-glass" x="-35%" y="-35%" width="170%" height="170%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.011 0.011" numOctaves="2" seed="14" result="noise"></feTurbulence>
+      <feGaussianBlur in="noise" stdDeviation="3.2" result="map"></feGaussianBlur>
+      <feDisplacementMap in="SourceGraphic" in2="map" scale="57.1" xChannelSelector="R" yChannelSelector="G" result="dR"></feDisplacementMap>
+      <feColorMatrix in="dR" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="cR"></feColorMatrix>
+      <feDisplacementMap in="SourceGraphic" in2="map" scale="49" xChannelSelector="R" yChannelSelector="G" result="dG"></feDisplacementMap>
+      <feColorMatrix in="dG" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="cG"></feColorMatrix>
+      <feDisplacementMap in="SourceGraphic" in2="map" scale="40.9" xChannelSelector="R" yChannelSelector="G" result="dB"></feDisplacementMap>
+      <feColorMatrix in="dB" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="cB"></feColorMatrix>
+      <feBlend in="cR" in2="cG" mode="screen" result="blendRG"></feBlend>
+      <feBlend in="blendRG" in2="cB" mode="screen"></feBlend>
+    </filter>
+  </svg>
+
+  <!-- ── BOTTOM NAVIGATION ── -->
+  <nav class="scroll-nav scroll-nav--active-services" id="scrollNav">
+    <div class="scroll-nav__pill" aria-hidden="true"></div>
+    <div class="scroll-nav__icon-group" data-morph="true">
+      <button class="scroll-nav__theme-btn" id="themeBtn" aria-label="Switch theme" type="button">
+        <span class="scroll-nav__theme-icons" aria-hidden="true">
+          <img class="ico-sun" src="assets/icon-sun.svg" alt="Switch to light theme">
+          <img class="ico-moon" src="assets/icon-moon.svg" alt="Switch to dark theme">
+        </span>
+      </button>
+    </div>
+    <a class="scroll-nav__item scroll-nav__home-item" data-morph="true" href="index.html#work">Work</a>
+    <a class="scroll-nav__item scroll-nav__item--active" data-morph="true" href="services.html">Services+</a>
+    <a class="scroll-nav__item" data-morph="true" href="index.html#pricing">Pricing</a>
+    <a class="scroll-nav__item" data-morph="true" href="index.html#about">About</a>
+    <a class="scroll-nav__item scroll-nav__talk" data-morph="true" href="#contact">
+      Let&apos;s talk
+      <img src="assets/icon-arrow-outward.svg" alt="" aria-hidden="true">
+    </a>
+  </nav>
+
+  <!-- ── MOBILE BAR ── -->
+  <div class="scroll-nav__m-bar" id="mBar">
+    <button class="scroll-nav__m-theme-btn" id="mThemeBtn" aria-label="Toggle theme" type="button">
+      <span class="scroll-nav__theme-icons" aria-hidden="true">
+        <img class="ico-sun" src="assets/icon-sun.svg" alt="Theme">
+        <img class="ico-moon" src="assets/icon-moon.svg" alt="Theme">
+      </span>
+    </button>
+    <button class="scroll-nav__m-bar-main" id="mBarBtn" aria-expanded="false" aria-label="Services, open menu"
+      type="button">
+      <span class="scroll-nav__m-label" id="mLabel">Services+</span>
+      <span class="scroll-nav__m-burger" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+
+  <!-- ── MOBILE OVERLAY ── -->
+  <div class="scroll-nav__m-overlay" id="mOverlay" aria-hidden="true">
+    <div class="scroll-nav__m-panel">
+      <div class="scroll-nav__m-logo">
+        <img src="assets/karma-logo.png" alt="Karma Design Lab">
+      </div>
+      <div class="scroll-nav__m-menu">
+        <a class="scroll-nav__m-item" href="index.html#home">Home</a>
+        <a class="scroll-nav__m-item" href="index.html#work">Work</a>
+        <a class="scroll-nav__m-item scroll-nav__m-item--active" href="services.html">Services+</a>
+        <a class="scroll-nav__m-item" href="index.html#pricing">Pricing</a>
+        <a class="scroll-nav__m-item" href="index.html#about">About</a>
+        <a class="scroll-nav__m-item scroll-nav__m-talk" href="#contact">Let&apos;s talk <img
+            src="assets/icon-arrow-outward.svg" alt="" style="width:14px;height:14px;display:inline-block"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+     MAIN SERVICES CONTENT
+══════════════════════════════════════════════════════ -->
+  <main class="page-module__VKYseq__main">
+
+    <!-- Ambient Rotating Background Shape -->
+    <div class="page-module__VKYseq__bgShape" aria-hidden="true">
+      <div class="page-module__VKYseq__bgShapeInner">
+        <img src="assets/work/bg-shapes.svg" alt="" />
+      </div>
+    </div>
+
+    <div class="page-module__VKYseq__fg">
+
+      <!-- ── HERO SECTION ── -->
+      <section class="page-module__VKYseq__hero">
+        <a class="page-module__VKYseq__heroLogo" aria-label="Home" href="index.html">
+          <img src="assets/karma-logo.png" alt="Karma Design Lab" />
+        </a>
+        <div class="page-module__VKYseq__wrap page-module__VKYseq__heroWrap">
+          <h1 class="page-module__VKYseq__heroHeadline">
+            Strategy, design, and <br class="page-module__VKYseq__brDesktop" />engineering.
+            <em>Without the <br class="page-module__VKYseq__brDesktop" />agency overhead.</em>
+          </h1>
+          <p class="page-module__VKYseq__heroSub">
+            Six disciplines, one accountable digital studio partner. Karma Design Lab works with founders and growing teams across Dubai, UAE, and India to engineer high-converting e-commerce platforms, web applications, and distinctive brand identities.
+          </p>
+        </div>
+
+        <!-- ── CONTINUOUS STRIP MARQUEE ── -->
+        <div class="page-module__VKYseq__strip" aria-hidden="true">
+          <div class="page-module__VKYseq__stripTrack">
+            <!-- First Loop -->
+            <div class="page-module__VKYseq__stripCard page-module__VKYseq__stripWide">
+              <img src="assets/works/grid/acronis.png" alt="Showcase project" loading="lazy" />
+            </div>
+            <div class="page-module__VKYseq__stripCard page-module__VKYseq__stripSmall">
+              <img src="assets/works/grid/polygon.png" alt="Showcase project" loading="lazy" />
+            </div>
+            <div class="page-module__VKYseq__stripCard page-module__VKYseq__stripWide">
+              <img src="assets/works/grid/db.png" alt="Showcase project" loading="lazy" />
+            </div>
+            <div class="page-module__VKYseq__stripCard page-module__VKYseq__stripSmall">
+              <img src="assets/works/grid/orion.png" alt="Showcase project" loading="lazy" />
+            </div>
+            <div class="page-module__VKYseq__stripCard page-module__VKYseq__stripSmall">
+              <img src="assets/works/grid/macmillan.png" alt="Showcase project" loading="lazy" />
+            </div>
+            <div class="page-module__VKYseq__stripCard page-module__VKYseq__stripWide">
+              <img src="assets/works/grid/wpengine.png" alt="Showcase project" loading="lazy" />
+            </div>
+            <div class="page-module__VKYseq__stripCard page-module__VKYseq__stripSmall">
+              <img src="assets/works/grid/ringer.png" alt="Showcase project" loading="lazy" />
+            </div>
+
+            <!-- Second Loop for Seamless Loop -->
+            <div class="page-module__VKYseq__stripCard page-module__VKYseq__stripWide">
+              <img src="assets/works/grid/acronis.png" alt="Showcase project" loading="lazy" />
+            </div>
+            <div class="page-module__VKYseq__stripCard page-module__VKYseq__stripSmall">
+              <img src="assets/works/grid/polygon.png" alt="Showcase project" loading="lazy" />
+            </div>
+            <div class="page-module__VKYseq__stripCard page-module__VKYseq__stripWide">
+              <img src="assets/works/grid/db.png" alt="Showcase project" loading="lazy" />
+            </div>
+            <div class="page-module__VKYseq__stripCard page-module__VKYseq__stripSmall">
+              <img src="assets/works/grid/orion.png" alt="Showcase project" loading="lazy" />
+            </div>
+            <div class="page-module__VKYseq__stripCard page-module__VKYseq__stripSmall">
+              <img src="assets/works/grid/macmillan.png" alt="Showcase project" loading="lazy" />
+            </div>
+            <div class="page-module__VKYseq__stripCard page-module__VKYseq__stripWide">
+              <img src="assets/works/grid/wpengine.png" alt="Showcase project" loading="lazy" />
+            </div>
+            <div class="page-module__VKYseq__stripCard page-module__VKYseq__stripSmall">
+              <img src="assets/works/grid/ringer.png" alt="Showcase project" loading="lazy" />
+            </div>
+          </div>
+          <div class="page-module__VKYseq__stripOverlay"></div>
+        </div>
+      </section>
+
+      <!-- ── INDEX JUMP SECTION ── -->
+      <section class="page-module__VKYseq__indexSection">
+        <div class="page-module__VKYseq__wrap">
+          <div class="page-module__VKYseq__indexCols">
+            <div class="page-module__VKYseq__indexCol">
+              <a class="page-module__VKYseq__indexRow" href="#web-development">
+                <span class="page-module__VKYseq__indexNum">01</span>
+                <span class="page-module__VKYseq__indexTitle">Web development</span>
+                <span class="page-module__VKYseq__indexTag">Full-stack &amp; CMS</span>
+                <span class="page-module__VKYseq__indexArrow" aria-hidden="true">
+                  <img src="assets/services/index-arrow.svg" alt="" />
+                </span>
+              </a>
+              <a class="page-module__VKYseq__indexRow" href="#web-design">
+                <span class="page-module__VKYseq__indexNum">02</span>
+                <span class="page-module__VKYseq__indexTitle">Web design &amp; UI/UX</span>
+                <span class="page-module__VKYseq__indexTag">Conversion-focused</span>
+                <span class="page-module__VKYseq__indexArrow" aria-hidden="true">
+                  <img src="assets/services/index-arrow.svg" alt="" />
+                </span>
+              </a>
+              <a class="page-module__VKYseq__indexRow" href="#ecommerce">
+                <span class="page-module__VKYseq__indexNum">03</span>
+                <span class="page-module__VKYseq__indexTitle">E-commerce platforms</span>
+                <span class="page-module__VKYseq__indexTag">Shopify &amp; Custom</span>
+                <span class="page-module__VKYseq__indexArrow" aria-hidden="true">
+                  <img src="assets/services/index-arrow.svg" alt="" />
+                </span>
+              </a>
+              <a class="page-module__VKYseq__indexRow" href="#brand-identity">
+                <span class="page-module__VKYseq__indexNum">04</span>
+                <span class="page-module__VKYseq__indexTitle">Brand identity</span>
+                <span class="page-module__VKYseq__indexTag">Visual systems</span>
+                <span class="page-module__VKYseq__indexArrow" aria-hidden="true">
+                  <img src="assets/services/index-arrow.svg" alt="" />
+                </span>
+              </a>
+            </div>
+            <div class="page-module__VKYseq__indexCol">
+              <a class="page-module__VKYseq__indexRow" href="#mobile-applications">
+                <span class="page-module__VKYseq__indexNum">05</span>
+                <span class="page-module__VKYseq__indexTitle">Mobile applications</span>
+                <span class="page-module__VKYseq__indexTag">iOS &amp; Android</span>
+                <span class="page-module__VKYseq__indexArrow" aria-hidden="true">
+                  <img src="assets/services/index-arrow.svg" alt="" />
+                </span>
+              </a>
+              <a class="page-module__VKYseq__indexRow" href="#seo-performance">
+                <span class="page-module__VKYseq__indexNum">06</span>
+                <span class="page-module__VKYseq__indexTitle">SEO &amp; Performance</span>
+                <span class="page-module__VKYseq__indexTag">Organic growth</span>
+                <span class="page-module__VKYseq__indexArrow" aria-hidden="true">
+                  <img src="assets/services/index-arrow.svg" alt="" />
+                </span>
+              </a>
+              <div class="page-module__VKYseq__indexRow page-module__VKYseq__indexSoon">
+                <span class="page-module__VKYseq__indexNum">07</span>
+                <span class="page-module__VKYseq__indexTitle">Cloud hosting &amp; maintenance</span>
+                <span class="page-module__VKYseq__indexTag">*Available 24/7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 01. WEB DEVELOPMENT (formerly product-design) ── -->
+      <section id="web-development" class="page-module__VKYseq__service">
+        <a id="product-design" style="position:relative;top:-7rem"></a>
+        <div class="page-module__VKYseq__wrap">
+          <div class="page-module__VKYseq__serviceHead">
+            <span class="page-module__VKYseq__serviceGlyph"
+              style="mask-image:url(assets/svc-product-design.svg);-webkit-mask-image:url(assets/svc-product-design.svg)"
+              aria-hidden="true"></span>
+            <h2 class="page-module__VKYseq__serviceTitle">Web development</h2>
+          </div>
+          <div class="page-module__VKYseq__serviceBody">
+            <div>
+              <p class="page-module__VKYseq__colLabel">What to expect</p>
+              <p class="page-module__VKYseq__expectText">
+                We believe the foundation of an outstanding website comes from an in-depth understanding of the web's core architecture. We build robust, scalable, and responsive web solutions engineered to perform smoothly across all devices, ensuring clean code, enterprise security, and blazing-fast load speeds.
+              </p>
+              <a class="page-module__VKYseq__reachOut" href="#contact" data-open-contact="true" aria-label="Reach out, send a note">
+                <span class="page-module__VKYseq__reachPill">Reach out</span>
+                <span class="page-module__VKYseq__reachArrow" aria-hidden="true">
+                  <img src="assets/services/index-arrow.svg" alt="" />
+                </span>
+              </a>
+            </div>
+            <div>
+              <p class="page-module__VKYseq__colLabel">What’s in the bag</p>
+              <div class="page-module__VKYseq__bag">
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">01</span><span class="page-module__VKYseq__bagTitle">Corporate &amp; custom web development</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">02</span><span class="page-module__VKYseq__bagTitle">Full-stack architecture &amp; modern frameworks</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">03</span><span class="page-module__VKYseq__bagTitle">CMS integrations &amp; WordPress development</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">04</span><span class="page-module__VKYseq__bagTitle">API integrations &amp; backend connectivity</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">05</span><span class="page-module__VKYseq__bagTitle">Responsive cross-device compatibility</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">06</span><span class="page-module__VKYseq__bagTitle">Performance tuning &amp; code optimization</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-module__VKYseq__shotFrame" data-reveal="true">
+          <div class="page-module__VKYseq__shotReveal">
+            <img src="assets/services/product-design.jpg" alt="Web development showcase" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 02. WEB DESIGN & UI/UX ── -->
+      <section id="web-design" class="page-module__VKYseq__service">
+        <div class="page-module__VKYseq__wrap">
+          <div class="page-module__VKYseq__serviceHead">
+            <span class="page-module__VKYseq__serviceGlyph"
+              style="mask-image:url(assets/svc-web-design.svg);-webkit-mask-image:url(assets/svc-web-design.svg)"
+              aria-hidden="true"></span>
+            <h2 class="page-module__VKYseq__serviceTitle">Web design &amp; UI/UX</h2>
+          </div>
+          <div class="page-module__VKYseq__serviceBody">
+            <div>
+              <p class="page-module__VKYseq__colLabel">What to expect</p>
+              <p class="page-module__VKYseq__expectText">
+                Design forms the foundation for a successful product. We take your ideas, vision, and content, and blend them with our creative expertise to deliver engaging, responsive layouts that do the selling before the sales call — lightweight, accessible, and engineered to convert.
+              </p>
+              <a class="page-module__VKYseq__reachOut" href="#contact" data-open-contact="true" aria-label="Reach out, send a note">
+                <span class="page-module__VKYseq__reachPill">Reach out</span>
+                <span class="page-module__VKYseq__reachArrow" aria-hidden="true">
+                  <img src="assets/services/index-arrow.svg" alt="" />
+                </span>
+              </a>
+            </div>
+            <div>
+              <p class="page-module__VKYseq__colLabel">What’s in the bag</p>
+              <div class="page-module__VKYseq__bag">
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">01</span><span class="page-module__VKYseq__bagTitle">Lo-fi wireframes &amp; site architecture</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">02</span><span class="page-module__VKYseq__bagTitle">High-fidelity responsive UI design</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">03</span><span class="page-module__VKYseq__bagTitle">Interactive prototyping &amp; usability testing</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">04</span><span class="page-module__VKYseq__bagTitle">Micro-interactions &amp; subtle motion design</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">05</span><span class="page-module__VKYseq__bagTitle">Comprehensive design systems &amp; tokens</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">06</span><span class="page-module__VKYseq__bagTitle">Developer handoff &amp; design QA</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-module__VKYseq__shotFrame" data-reveal="true">
+          <div class="page-module__VKYseq__shotReveal">
+            <img src="assets/services/web-design.jpg" alt="Web design showcase" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 03. E-COMMERCE PLATFORMS (formerly digital-strategy) ── -->
+      <section id="ecommerce" class="page-module__VKYseq__service">
+        <a id="digital-strategy" style="position:relative;top:-7rem"></a>
+        <div class="page-module__VKYseq__wrap">
+          <div class="page-module__VKYseq__serviceHead">
+            <span class="page-module__VKYseq__serviceGlyph"
+              style="mask-image:url(assets/svc-digital-strategy.png);-webkit-mask-image:url(assets/svc-digital-strategy.png)"
+              aria-hidden="true"></span>
+            <h2 class="page-module__VKYseq__serviceTitle">E-commerce platforms</h2>
+          </div>
+          <div class="page-module__VKYseq__serviceBody">
+            <div>
+              <p class="page-module__VKYseq__colLabel">What to expect</p>
+              <p class="page-module__VKYseq__expectText">
+                A wide range of custom e-commerce platforms built to scale sales and streamline operations. From single-brand direct-to-consumer storefronts to high-traffic digital marketplaces, we optimize the entire purchasing journey from catalog browsing to frictionless checkout.
+              </p>
+              <a class="page-module__VKYseq__reachOut" href="#contact" data-open-contact="true" aria-label="Reach out, send a note">
+                <span class="page-module__VKYseq__reachPill">Reach out</span>
+                <span class="page-module__VKYseq__reachArrow" aria-hidden="true">
+                  <img src="assets/services/index-arrow.svg" alt="" />
+                </span>
+              </a>
+            </div>
+            <div>
+              <p class="page-module__VKYseq__colLabel">What’s in the bag</p>
+              <div class="page-module__VKYseq__bag">
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">01</span><span class="page-module__VKYseq__bagTitle">Custom e-commerce store architecture</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">02</span><span class="page-module__VKYseq__bagTitle">Payment gateway &amp; multi-currency integration</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">03</span><span class="page-module__VKYseq__bagTitle">Inventory &amp; catalog management setup</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">04</span><span class="page-module__VKYseq__bagTitle">Frictionless mobile cart &amp; checkout flows</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">05</span><span class="page-module__VKYseq__bagTitle">Conversion rate optimization (CRO)</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">06</span><span class="page-module__VKYseq__bagTitle">Analytics, pixel tracking &amp; ERP connection</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-module__VKYseq__shotFrame" data-reveal="true">
+          <div class="page-module__VKYseq__shotReveal">
+            <img src="assets/services/digital-strategy.jpg" alt="E-commerce platforms showcase" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 04. BRAND IDENTITY ── -->
+      <section id="brand-identity" class="page-module__VKYseq__service">
+        <div class="page-module__VKYseq__wrap">
+          <div class="page-module__VKYseq__serviceHead">
+            <span class="page-module__VKYseq__serviceGlyph page-module__VKYseq__serviceGlyphWide"
+              style="mask-image:url(assets/svc-brand-identity.svg);-webkit-mask-image:url(assets/svc-brand-identity.svg)"
+              aria-hidden="true"></span>
+            <h2 class="page-module__VKYseq__serviceTitle">Brand identity &amp; Strategy</h2>
+          </div>
+          <div class="page-module__VKYseq__serviceBody">
+            <div>
+              <p class="page-module__VKYseq__colLabel">What to expect</p>
+              <p class="page-module__VKYseq__expectText">
+                Graphic design is the visual representation of your core message. We build brand identities that are specific enough to be owned, flexible enough to scale, and distinct enough that you stand out in competitive markets across the UAE, India, and worldwide.
+              </p>
+              <a class="page-module__VKYseq__reachOut" href="#contact" data-open-contact="true" aria-label="Reach out, send a note">
+                <span class="page-module__VKYseq__reachPill">Reach out</span>
+                <span class="page-module__VKYseq__reachArrow" aria-hidden="true">
+                  <img src="assets/services/index-arrow.svg" alt="" />
+                </span>
+              </a>
+            </div>
+            <div>
+              <p class="page-module__VKYseq__colLabel">What’s in the bag</p>
+              <div class="page-module__VKYseq__bag">
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">01</span><span class="page-module__VKYseq__bagTitle">Logo design &amp; registered brand mark</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">02</span><span class="page-module__VKYseq__bagTitle">Visual identity system &amp; guidelines</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">03</span><span class="page-module__VKYseq__bagTitle">Comprehensive brandbook &amp; asset library</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">04</span><span class="page-module__VKYseq__bagTitle">Packaging &amp; print collateral design</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">05</span><span class="page-module__VKYseq__bagTitle">Messaging &amp; communication framework</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">06</span><span class="page-module__VKYseq__bagTitle">Social media design templates &amp; style guides</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-module__VKYseq__shotFrame" data-reveal="true">
+          <div class="page-module__VKYseq__shotReveal">
+            <img src="assets/services/brand-identity.jpg" alt="Brand identity showcase" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 05. MOBILE APPLICATIONS (Direct target anchor) ── -->
+      <section id="mobile-applications" class="page-module__VKYseq__service">
+        <div class="page-module__VKYseq__wrap">
+          <div class="page-module__VKYseq__serviceHead">
+            <span class="page-module__VKYseq__serviceGlyph"
+              style="mask-image:url(assets/services/glyph-mobile.svg);-webkit-mask-image:url(assets/services/glyph-mobile.svg)"
+              aria-hidden="true"></span>
+            <h2 class="page-module__VKYseq__serviceTitle">Mobile applications</h2>
+          </div>
+          <div class="page-module__VKYseq__serviceBody">
+            <div>
+              <p class="page-module__VKYseq__colLabel">What to expect</p>
+              <p class="page-module__VKYseq__expectText">
+                Mobile is where your audience lives. We design and engineer native iOS and Android apps around how people actually behave — not how we hope they will. From first open to daily habit, every interaction is intentional, fluid, and built to keep users coming back.
+              </p>
+              <a class="page-module__VKYseq__reachOut" href="#contact" data-open-contact="true" aria-label="Reach out, send a note">
+                <span class="page-module__VKYseq__reachPill">Reach out</span>
+                <span class="page-module__VKYseq__reachArrow" aria-hidden="true">
+                  <img src="assets/services/index-arrow.svg" alt="" />
+                </span>
+              </a>
+            </div>
+            <div>
+              <p class="page-module__VKYseq__colLabel">What’s in the bag</p>
+              <div class="page-module__VKYseq__bag">
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">01</span><span class="page-module__VKYseq__bagTitle">iOS and Android UI/UX design</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">02</span><span class="page-module__VKYseq__bagTitle">User research &amp; behavioral insights</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">03</span><span class="page-module__VKYseq__bagTitle">Interaction, gesture &amp; haptic design</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">04</span><span class="page-module__VKYseq__bagTitle">Interactive Figma &amp; mobile prototyping</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">05</span><span class="page-module__VKYseq__bagTitle">Native mobile design systems &amp; tokens</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">06</span><span class="page-module__VKYseq__bagTitle">Engineering handoff &amp; release QA support</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-module__VKYseq__shotFrame" data-reveal="true">
+          <div class="page-module__VKYseq__shotReveal">
+            <img src="assets/services/mobile-applications.jpg" alt="Mobile applications showcase" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 06. SEO & PERFORMANCE GROWTH (formerly marketing-design) ── -->
+      <section id="seo-performance" class="page-module__VKYseq__service">
+        <a id="marketing-design" style="position:relative;top:-7rem"></a>
+        <div class="page-module__VKYseq__wrap">
+          <div class="page-module__VKYseq__serviceHead">
+            <span class="page-module__VKYseq__serviceGlyph"
+              style="mask-image:url(assets/services/glyph-marketing.svg);-webkit-mask-image:url(assets/services/glyph-marketing.svg)"
+              aria-hidden="true"></span>
+            <h2 class="page-module__VKYseq__serviceTitle">SEO &amp; Performance growth</h2>
+          </div>
+          <div class="page-module__VKYseq__serviceBody">
+            <div>
+              <p class="page-module__VKYseq__colLabel">What to expect</p>
+              <p class="page-module__VKYseq__expectText">
+                In today's digital landscape, the significance of Search Engine Optimization is on par with primary advertising. We structure, speed-tune, and optimize every page so your business earns sustainable organic discovery, faster Core Web Vitals, and higher search rankings across competitive regions.
+              </p>
+              <a class="page-module__VKYseq__reachOut" href="#contact" data-open-contact="true" aria-label="Reach out, send a note">
+                <span class="page-module__VKYseq__reachPill">Reach out</span>
+                <span class="page-module__VKYseq__reachArrow" aria-hidden="true">
+                  <img src="assets/services/index-arrow.svg" alt="" />
+                </span>
+              </a>
+            </div>
+            <div>
+              <p class="page-module__VKYseq__colLabel">What’s in the bag</p>
+              <div class="page-module__VKYseq__bag">
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">01</span><span class="page-module__VKYseq__bagTitle">Comprehensive technical SEO audit</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">02</span><span class="page-module__VKYseq__bagTitle">On-page SEO &amp; semantic keyword structuring</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">03</span><span class="page-module__VKYseq__bagTitle">Core Web Vitals &amp; speed optimization</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">04</span><span class="page-module__VKYseq__bagTitle">Google Search Console &amp; Schema markup</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">05</span><span class="page-module__VKYseq__bagTitle">Local SEO for Dubai, UAE, Kerala &amp; India</span></div>
+                <div class="page-module__VKYseq__bagRow"><span class="page-module__VKYseq__bagNum">06</span><span class="page-module__VKYseq__bagTitle">Performance tracking &amp; monthly growth audits</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-module__VKYseq__shotFrame" data-reveal="true">
+          <div class="page-module__VKYseq__shotReveal">
+            <img src="assets/services/marketing-design.jpg" alt="SEO &amp; performance growth showcase" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ── PRINCIPLES SECTION (Interactive Accordion) ── -->
+      <section class="page-module__VKYseq__principlesSection">
+        <div class="page-module__VKYseq__wrap">
+          <h2 class="page-module__VKYseq__principlesHead">
+            Rooted in our core values — <em>honesty, hard work, and mutual trust</em>
+          </h2>
+          <div class="page-module__VKYseq__principlesRow">
+            <button type="button" class="page-module__VKYseq__principle page-module__VKYseq__principleOpen" aria-expanded="true">
+              <span class="page-module__VKYseq__principleNum">01</span>
+              <span class="page-module__VKYseq__principleReveal">
+                <span class="page-module__VKYseq__principleDesc">We work with partners who are as dedicated to their craft as we are to ours. Every line of code, layout grid, and interaction is engineered to endure.</span>
+              </span>
+              <span class="page-module__VKYseq__principleTitle">Craftsmanship</span>
+            </button>
+            <button type="button" class="page-module__VKYseq__principle" aria-expanded="false">
+              <span class="page-module__VKYseq__principleNum">02</span>
+              <span class="page-module__VKYseq__principleReveal">
+                <span class="page-module__VKYseq__principleDesc">As your digital studio, we unravel complexity through clear communication, direct founder access, and transparent execution — no middle managers or bots.</span>
+              </span>
+              <span class="page-module__VKYseq__principleTitle">True partnership</span>
+            </button>
+            <button type="button" class="page-module__VKYseq__principle" aria-expanded="false">
+              <span class="page-module__VKYseq__principleNum">03</span>
+              <span class="page-module__VKYseq__principleReveal">
+                <span class="page-module__VKYseq__principleDesc">Over a decade of launching websites and digital platforms across Dubai, Kochi, and international markets that perform under real traffic.</span>
+              </span>
+              <span class="page-module__VKYseq__principleTitle">Proven delivery</span>
+            </button>
+            <button type="button" class="page-module__VKYseq__principle" aria-expanded="false">
+              <span class="page-module__VKYseq__principleNum">04</span>
+              <span class="page-module__VKYseq__principleReveal">
+                <span class="page-module__VKYseq__principleDesc">Modern design systems and accelerated engineering workflows collapse months into weeks, giving you real momentum and rapid time-to-market.</span>
+              </span>
+              <span class="page-module__VKYseq__principleTitle">Agile pace</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── QUOTE BAND (Parallax Drifting Typography & Floating Glyphs) ── -->
+      <section class="page-module__VKYseq__qband" id="qband">
+        <div class="page-module__VKYseq__qcontent">
+          <p data-qd="200" data-mdrift="200" class="page-module__VKYseq__qline page-module__VKYseq__qlineSans" style="left:11rem;top:0rem">From Dubai to Kochi,</p>
+          <p data-qd="-240" data-mdrift="-240" class="page-module__VKYseq__qline page-module__VKYseq__qlineSerif" style="left:28.375rem;top:13.3125rem">scaling global brands</p>
+          <img data-qglyph="true" data-qd="200" data-mdrift="200" class="page-module__VKYseq__qicon" src="assets/quote-icon-7.png" alt="" aria-hidden="true" style="left:0rem;top:3.25rem"/>
+          <img data-qglyph="true" data-qd="200" data-mdrift="200" class="page-module__VKYseq__qicon" src="assets/quote-icon-1.png" alt="" aria-hidden="true" style="left:118.1875rem;top:5rem"/>
+          <img data-qglyph="true" data-qd="200" data-mdrift="200" class="page-module__VKYseq__qicon" src="assets/quote-icon-5.png" alt="" aria-hidden="true" style="left:128.4375rem;top:5rem"/>
+          <img data-qglyph="true" data-qd="-240" data-mdrift="200" class="page-module__VKYseq__qicon" src="assets/quote-half.svg" alt="" aria-hidden="true" style="left:6.75rem;top:16.75rem"/>
+          <img data-qglyph="true" data-qd="-240" data-mdrift="200" class="page-module__VKYseq__qicon" src="assets/quote-star.svg" alt="" aria-hidden="true" style="left:17.5625rem;top:17.625rem"/>
+          <img data-qglyph="true" data-qd="-240" data-mdrift="-240" class="page-module__VKYseq__qicon" src="assets/quote-icon-3.png" alt="" aria-hidden="true" style="left:106.875rem;top:16.125rem"/>
+          <img data-qglyph="true" data-qd="-240" data-mdrift="-240" class="page-module__VKYseq__qicon" src="assets/quote-icon-6.png" alt="" aria-hidden="true" style="left:118.0625rem;top:17.1875rem"/>
+          <img data-qglyph="true" data-qd="-240" data-mdrift="-240" class="page-module__VKYseq__qicon" src="assets/quote-icon-4.png" alt="" aria-hidden="true" style="left:129.5625rem;top:17.1875rem"/>
+        </div>
+      </section>
+
+      <!-- ── METRICS SECTION ── -->
+      <section class="page-module__VKYseq__metricsSection">
+        <div class="page-module__VKYseq__wrap">
+          <div class="page-module__VKYseq__metricsGrid">
+            <h2 class="page-module__VKYseq__metricsHead">Numbers that mean something. <em>Here’s what our studio has delivered.</em></h2>
+            
+            <div class="page-module__VKYseq__metricCard" data-reveal="true">
+              <div class="page-module__VKYseq__metricValueWrap">
+                <span class="page-module__VKYseq__slide" style="transition-delay:0.00s">
+                  <span class="page-module__VKYseq__metricValue">10+</span>
+                </span>
+              </div>
+              <p class="page-module__VKYseq__metricDesc">Years in business across UAE &amp; India</p>
+            </div>
+
+            <div class="page-module__VKYseq__metricCard" data-reveal="true">
+              <div class="page-module__VKYseq__metricValueWrap">
+                <span class="page-module__VKYseq__slide" style="transition-delay:0.08s">
+                  <span class="page-module__VKYseq__metricValue">100+</span>
+                </span>
+              </div>
+              <p class="page-module__VKYseq__metricDesc">Custom websites, e-commerce stores &amp; apps built</p>
+            </div>
+
+            <div class="page-module__VKYseq__metricCard" data-reveal="true">
+              <div class="page-module__VKYseq__metricValueWrap">
+                <span class="page-module__VKYseq__slide" style="transition-delay:0.16s">
+                  <span class="page-module__VKYseq__metricValue">98%</span>
+                </span>
+              </div>
+              <p class="page-module__VKYseq__metricDesc">Client satisfaction &amp; long-term partnership rate</p>
+            </div>
+
+            <div class="page-module__VKYseq__metricCard" data-reveal="true">
+              <div class="page-module__VKYseq__metricValueWrap">
+                <span class="page-module__VKYseq__slide" style="transition-delay:0.24s">
+                  <span class="page-module__VKYseq__metricValue">2</span>
+                </span>
+              </div>
+              <p class="page-module__VKYseq__metricDesc">Global studio hubs: Dubai (Al Moosa) &amp; Kochi (Edappally)</p>
+            </div>
+
+            <div class="page-module__VKYseq__metricCard" data-reveal="true">
+              <div class="page-module__VKYseq__metricValueWrap">
+                <span class="page-module__VKYseq__slide" style="transition-delay:0.32s">
+                  <span class="page-module__VKYseq__metricValue">24/7</span>
+                </span>
+              </div>
+              <p class="page-module__VKYseq__metricDesc">Managed high-performance cloud hosting &amp; uptime</p>
+            </div>
+
+            <div class="page-module__VKYseq__metricCard" data-reveal="true">
+              <div class="page-module__VKYseq__metricValueWrap">
+                <span class="page-module__VKYseq__slide" style="transition-delay:0.40s">
+                  <span class="page-module__VKYseq__metricValue">3x</span>
+                </span>
+              </div>
+              <p class="page-module__VKYseq__metricDesc">Average organic traffic &amp; speed performance gain</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════ -->
+  <footer class="footer" id="contact">
+    <div class="footer__inner">
+      <div class="footer__headingMask">
+        <h2 class="footer__heading">Get in touch</h2>
+      </div>
+      <div class="footer__actionRow">
+        <p class="footer__mission">
+          We build digital products that move people and move business. Honesty, hard work, and trust. Based in Dubai (UAE) &amp; Kochi (India).
+          <button type="button" class="footer__writeLink" id="footerWriteBtn">Prefer to write? Send a note.</button>
+        </p>
+        <button type="button" class="footer__contact" id="footerContactBtn" aria-label="Contact — send a note">
+          <span>Contact</span>
+          <img src="assets/footer-contact-arrow.svg" alt="" />
+        </button>
+      </div>
+      <div class="footer__socialRow">
+        <a class="footer__card" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn">
+          <span class="footer__cardIcon"
+            style="mask-image:url(assets/social-linkedin.svg);-webkit-mask-image:url(assets/social-linkedin.svg)"
+            aria-hidden="true"></span>
+          <span class="footer__cardLabel">LinkedIn</span>
+        </a>
+        <a class="footer__card" href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <span class="footer__cardIcon"
+            style="mask-image:url(assets/social-x.svg);-webkit-mask-image:url(assets/social-x.svg)"
+            aria-hidden="true"></span>
+          <span class="footer__cardLabel">X</span>
+        </a>
+        <a class="footer__card" href="https://www.behance.net" target="_blank" rel="noopener noreferrer"
+          aria-label="Behance">
+          <span class="footer__cardIcon"
+            style="mask-image:url(assets/social-behance.svg);-webkit-mask-image:url(assets/social-behance.svg)"
+            aria-hidden="true"></span>
+          <span class="footer__cardLabel">Behance</span>
+        </a>
+        <a class="footer__card" href="https://dribbble.com" target="_blank" rel="noopener noreferrer"
+          aria-label="Dribbble">
+          <span class="footer__cardIcon"
+            style="mask-image:url(assets/social-dribbble.svg);-webkit-mask-image:url(assets/social-dribbble.svg)"
+            aria-hidden="true"></span>
+          <span class="footer__cardLabel">Dribbble</span>
+        </a>
+        <a class="footer__card" href="https://www.awwwards.com" target="_blank" rel="noopener noreferrer"
+          aria-label="Awwwards">
+          <span class="footer__cardIcon"
+            style="mask-image:url(assets/social-awwwards.svg);-webkit-mask-image:url(assets/social-awwwards.svg)"
+            aria-hidden="true"></span>
+          <span class="footer__cardLabel">Awwwards</span>
+        </a>
+      </div>
+      <p class="footer__copyright">©2026 Karma Design Lab — All rights reserved · Dubai &amp; Kochi</p>
+      <div class="footer__legal">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+      </div>
+      <button class="footer__logoBtn" id="footerBackToTop" aria-label="Back to top" type="button">
+        <img class="footer__logoImg" src="assets/logo-registered.svg" alt="Karma logo" />
+        <img class="footer__arrowImg" src="assets/footer-arrow-up.svg" alt="" />
+      </button>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════
+     CONTACT MODAL
+══════════════════════════════════════════════════════ -->
+  <div class="contact-modal__overlay" id="contactModalOverlay" role="presentation" aria-hidden="true">
+    <div class="contact-modal__modal" role="dialog" aria-modal="true" aria-labelledby="contact-title" id="contactModal">
+      <span class="contact-modal__grabber" aria-hidden="true"></span>
+      <button type="button" class="contact-modal__close" id="contactModalClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <!-- Sent state -->
+      <div class="contact-modal__sent" id="contactModalSent" style="display:none">
+        <div class="contact-modal__sentGlyphs" aria-hidden="true">
+          <span class="contact-modal__sentGlyph"
+            style="mask-image:url(assets/pricing/glyph-project.svg);-webkit-mask-image:url(assets/pricing/glyph-project.svg)"></span>
+          <span class="contact-modal__sentGlyph"
+            style="mask-image:url(assets/pricing/glyph-subscription.svg);-webkit-mask-image:url(assets/pricing/glyph-subscription.svg)"></span>
+          <span class="contact-modal__sentGlyph"
+            style="mask-image:url(assets/pricing/glyph-partnership.svg);-webkit-mask-image:url(assets/pricing/glyph-partnership.svg)"></span>
+        </div>
+        <h2 id="contact-sent-title" class="contact-modal__sentTitle">Got it. Thank you.</h2>
+        <div class="contact-modal__sentBody">
+          <p>Your note just landed in our inbox, and we read every message ourselves. Expect a reply within one business day.</p>
+          <p>In the meantime, keep building. If more comes to mind, this form is always open.</p>
+        </div>
+        <button type="button" class="contact-modal__closeBtn" id="contactModalSentClose">Close</button>
+      </div>
+
+      <!-- Form state -->
+      <div class="contact-modal__form-wrap" id="contactModalFormWrap">
+        <div class="contact-modal__header">
+          <h2 id="contact-title" class="contact-modal__title">Let&apos;s build something <em>remarkable</em></h2>
+          <p class="contact-modal__subtitle">Tell us about your project, timeline, and goals. We read every note ourselves and reply within one business day.</p>
+        </div>
+
+        <form class="contact-modal__form" id="contactModalForm" novalidate>
+          <div class="contact-modal__row">
+            <div class="contact-modal__field" id="field-name">
+              <input class="contact-modal__control" id="cf-name" type="text" placeholder=" " required />
+              <label for="cf-name">Your name<span class="contact-modal__req">*</span></label>
+              <p class="contact-modal__errorMsg" id="err-name" style="display:none">Please complete this required field.</p>
+            </div>
+            <div class="contact-modal__field" id="field-email">
+              <input class="contact-modal__control" id="cf-email" type="email" placeholder=" " required />
+              <label for="cf-email">Email<span class="contact-modal__req">*</span></label>
+              <p class="contact-modal__errorMsg" id="err-email" style="display:none">Please enter a valid email address.</p>
+            </div>
+          </div>
+
+          <div class="contact-modal__row">
+            <div class="contact-modal__field" id="field-linkedin">
+              <input class="contact-modal__control" id="cf-linkedin" type="text" placeholder=" " />
+              <label for="cf-linkedin">LinkedIn</label>
+            </div>
+            <div class="contact-modal__field" id="field-company">
+              <input class="contact-modal__control" id="cf-company" type="text" placeholder=" " />
+              <label for="cf-company">Company name</label>
+            </div>
+          </div>
+
+          <div class="contact-modal__chipsField" id="field-chips">
+            <p class="contact-modal__chipsLabel">You are looking for?<span class="contact-modal__req">*</span></p>
+            <div class="contact-modal__chips" id="contactChips" role="group" aria-label="You are looking for?">
+              <button type="button" class="contact-modal__chip" aria-pressed="false">Web development</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">Web design &amp; UI/UX</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">E-commerce</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">Brand identity</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">Mobile apps</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">SEO &amp; Growth</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">Cloud hosting</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">WordPress / CMS</button>
+              <button type="button" class="contact-modal__chip" aria-pressed="false">Other</button>
+            </div>
+            <p class="contact-modal__errorMsg" id="err-chips" style="display:none">Please pick at least one.</p>
+          </div>
+
+          <div class="contact-modal__field" id="field-message">
+            <textarea class="contact-modal__control" id="cf-message" placeholder=" " rows="1" required></textarea>
+            <label for="cf-message">Tell us more about the project<span class="contact-modal__req">*</span></label>
+            <p class="contact-modal__errorMsg" id="err-message" style="display:none">Please complete this required field.</p>
+          </div>
+
+          <div class="contact-modal__sendRow">
+            <p class="contact-modal__formError" id="cf-general-error" style="display:none"></p>
+            <button type="submit" class="contact-modal__send" id="cf-submit">
+              <span class="contact-modal__sendLabel">Send note</span>
+              <span class="contact-modal__sendDisc" aria-hidden="true">
+                <img src="assets/footer-contact-arrow.svg" alt="" />
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
